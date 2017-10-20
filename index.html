@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> USAID Carribean Assistance and Tourism  </title>
+
+  <link rel="stylesheet" href="styles/charts.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+
+  <!-- add Highcharts in the head of your page -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/themes/avocado.js"></script>
+
+</head>
+<body>
+
+  <h1> USAID Involvement in the Carribean </h1>
+
+  <p>
+    By: Eliana French
+  </p>
+
+  <div id="container">
+    <script>
+    Highcharts.chart('container', {
+
+    title: {
+      text: 'USAID Economic Spending in the Carribean'
+    },
+
+    subtitle: {
+      text: 'Years:2011-2015'
+    },
+
+    yAxis: {
+      title: {
+        text: 'Amount (US Dollars)'
+      }
+    },
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+      series: {
+        label: {
+          connectorAllowed: false
+        },
+        pointStart: 2011
+      }
+    },
+
+    series: [{
+      name: 'Haiti',
+      data: [653709561, 462373619, 442951253, 345916448, 387705008]
+    }, {
+      name: 'Cuba',
+      data: [12949740, 13925968, 10591860, 11639091, 13146845]
+    }, {
+      name: 'Bahamas',
+      data: [3916059, 1520768, 1096669, 1305824, 767064]
+    }, {
+      name: 'Dominican Republic',
+      data: [64237280, 77539946, 56585861, 44011613, 106191534]
+    }, {
+      name: 'Jamaica',
+      data: [32085087, 25117194, 30708363, 30328722, 32676035]
+    }],
+
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+          }
+        }
+      }]
+    }
+
+  });
+
+    </script>
+</div>
+<p>
+  Source: World Tourism Organization, accessed through <a href="http://statistics.unwto.org/"> World Statistics</a>
+</p>
+
+<p>
+  The USAID is responsible for the US governments contribution to civilian aid abroad. These contributions are known as an economic assistance to the nations that receive US funding. An example of a project that is funded through this branch of the government is the Feed the Future program that partners with UF in Haiti in an attempt to increase sustainable agriculture throughout Haiti. Haitian students come to the US to learn and then return to Haiti to aprticipate in one of seven programs to sucessfully grow the country's food production.This chart shows the distribution of USAID funding within five countries in the Carribean, including Haiti, over a five year period. These are the most recent statistics on the allocation of assistance.
+ </p>
+
+<div id="barchart">
+  <script>
+  Highcharts.chart('barchart', {
+
+  title: {
+    text: 'International Tourism Spending In Country '
+  },
+
+  subtitle: {
+    text: 'Year: 2015'
+  },
+
+  xAxis: {
+    categories: ['Haiti', 'Jamaica', 'Bahamas', 'Cuba', 'Dominican 				Republic']
+  },
+
+  series: [{
+    type: 'column',
+    colorByPoint: true,
+    data: [609000000, 2401000000, 2396000000, 2819000000, 6118000000,
+
+    ],
+    showInLegend: false
+  }]
+
+});
+
+
+$('#plain').click(function() {
+  chart.update({
+    chart: {
+      inverted: false,
+      polar: false
+    },
+    subtitle: {
+      text: 'Plain'
+    }
+  });
+});
+
+$('#inverted').click(function() {
+  chart.update({
+    chart: {
+      inverted: true,
+      polar: false
+    },
+    subtitle: {
+      text: 'Inverted'
+    }
+  });
+});
+
+$('#polar').click(function() {
+  chart.update({
+    chart: {
+      inverted: false,
+      polar: true
+    },
+    subtitle: {
+      text: 'Polar'
+    }
+  });
+});
+
+  </script>
+</div>
+<p>
+  Source: World Tourism Orgnaization, accessed through <a href="http://statistics.unwto.org/"> World Statistics</a>
+</p>
+
+  <p>
+    The second chart in this artcile, shows the annual receipts of international tourism within these same five countries for the 2015 year. This information is important to take into consideration when thinking about the ammount of assistance a country may need from USAID because internal production of income grows an economy beyond the point of USAID funding.
+   </p>
+
+  <!-- be sure to add the script for the chart ABOVE the closing /body tag
+       Note that the script is completely separate from the container DIV
+       This script looks for an element with the ID 'container' and then
+       writes the chart into that element
+       -->
+
+<!-- don't forget your required tags -->
+</body>
+</html>
